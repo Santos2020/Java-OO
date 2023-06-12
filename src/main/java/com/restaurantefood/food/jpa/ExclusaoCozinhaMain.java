@@ -1,7 +1,5 @@
 package com.restaurantefood.food.jpa;
 
-import java.util.List;
-
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ApplicationContext;
@@ -11,7 +9,7 @@ import com.restaurantefood.food.domain.model.Cozinha;
 import com.restaurantefood.food.domain.repository.CozinhaRepository;
 
 
-public class ConsultaCozinhaMain {
+public class ExclusaoCozinhaMain {
 
 	public static void main(String[] args) {
 		ApplicationContext applicationContext = new SpringApplicationBuilder(AlgafoodApiApplication.class)
@@ -20,11 +18,11 @@ public class ConsultaCozinhaMain {
 		
 		CozinhaRepository cozinhaRepository = applicationContext.getBean(CozinhaRepository.class);
 		
-		List<Cozinha> todasCozinhas = cozinhaRepository.todas();
+		Cozinha cozinha = new Cozinha();
+		cozinha.setId(1L);
 		
-		for (Cozinha cozinha : todasCozinhas) {
-			System.out.println(cozinha.getNome());
-		}
+		cozinhaRepository.remover(cozinha);
+		
 	}
 	
 }

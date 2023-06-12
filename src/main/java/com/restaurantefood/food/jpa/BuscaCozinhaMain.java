@@ -1,3 +1,4 @@
+
 package com.restaurantefood.food.jpa;
 
 import org.springframework.boot.WebApplicationType;
@@ -6,6 +7,7 @@ import org.springframework.context.ApplicationContext;
 
 import com.restaurantefood.food.AlgafoodApiApplication;
 import com.restaurantefood.food.domain.model.Cozinha;
+import com.restaurantefood.food.domain.repository.CozinhaRepository;
 
 
 public class BuscaCozinhaMain {
@@ -15,9 +17,9 @@ public class BuscaCozinhaMain {
 				.web(WebApplicationType.NONE)
 				.run(args);
 		
-		CadastroCozinha cadastroCozinha = applicationContext.getBean(CadastroCozinha.class);
+		CozinhaRepository cozinhaRepository = applicationContext.getBean(CozinhaRepository.class);
 		 
-		Cozinha cozinha = cadastroCozinha.buscar(1L);
+		Cozinha cozinha = cozinhaRepository.porId(1L);
 		
 	}	
 }

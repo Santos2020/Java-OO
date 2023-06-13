@@ -21,7 +21,7 @@ public class AlteracaoCozinhaMain {
 		Cozinha cozinha = new Cozinha();
 		cozinha.setId(1L);
 		cozinha.setNome("chapa");
-		cozinhaRepository.adicionar(cozinha);
+		cozinhaRepository.salvar(cozinha);
 		
 	}
 	

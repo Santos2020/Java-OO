@@ -1,3 +1,4 @@
+
 package com.restaurantefood.food.domain.model;
 
 import javax.persistence.Column;
